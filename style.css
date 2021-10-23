@@ -26,6 +26,9 @@ body {
   width: 358px;
   height: 540px;
 }
+/* GRAPHIC DETAILS */
+
+/* TOP BADGE BAND + ANIMATION BACKGROUND */
 
 .cracha::after {
   content: '';
@@ -43,6 +46,8 @@ body {
   animation-timing-function: linear;
 }
 
+/* TOP BADGE BAND BORDER-BOTTOM */
+
 .cracha::before {
   content: '';
   z-index: 2;
@@ -55,12 +60,16 @@ body {
   top: 16px;
 }
 
+/* BADGE VECTOR + BACKGROUND GRADIENT ANIMATION */
+
 .vetor {
   position: relative;
   width: 358px;
   height: 165px;
   background: url('images/vector.png');
-  background-position-y: calc(var(--mouse-y) * 10%);
+  background-size: 75%;
+  background-position-x: calc(var(--mouse-x)* 20%);
+  background-position-y: calc(var(--mouse-y) * 20%);
   background-blend-mode: luminosity;
   clip-path: polygon(0% 0%, 100% 0, 100% 50%, 50% 100%, 0 50%);
   animation: background-color;
@@ -69,35 +78,7 @@ body {
   animation-timing-function: linear;
 }
 
-.vetor::before{
-  position: absolute;
-  content: 'olá!';
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  color: rgba(204, 204, 204, 0.13);
-  /* width: 10px;
-  height: 10px;
-  background: white;
-  border: 1px solid #ccc; */
-  animation: ola;
-  animation-duration: 8s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-}
-
-@keyframes ola{
-  0%{left: 0; top: 0;}
-  10%{left: 10%; top: 50%; transform: rotate(180deg);}
-  20%{left: 20%; top: 40%;}
-  30%{left: 30%; top: 30%; transform: rotate(-45deg);}
-  40%{left: 40%; top: 40%; transform: rotate(360deg);}
-  60%{left: 60%; top: 60%; transform: rotate(45deg);}
-  70%{left: 75%; top: 35%;}
-  90%{left: 90%; top: 10%;}
-  100%{left: 0; top: 0; transform: rotate(180deg);}
-}
+/* VECTOR OVERLAY */
 
 .vetor::after {
   content: '';
@@ -109,6 +90,8 @@ body {
   background: linear-gradient(to bottom, transparent 0%, #fff 100%);
 }
 
+/* BACKGROUND ANIMATION */
+
 @keyframes background-color {
   0% {
     background-color: #0e318b;
@@ -119,4 +102,78 @@ body {
   100% {
     background-color: #0e318b;
   }
+}
+
+/* END GRAPICH DETAILS */
+
+.container {
+  position: relative;
+  top: -83px;
+  max-width: 250px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Avatar */
+
+.avatar {
+  position: relative;
+}
+
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.avatar span {
+  position: absolute;
+  z-index: 1;
+  top: -15px;
+  animation: rotate;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  0%{transform: rotate(0);}
+  100%{transform: rotate(360deg);}
+}
+
+/* END AVATAR */
+
+/* BIO */
+
+.bio h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: var(--gray);
+}
+
+.bio a {
+  color: var(--gray);
+  text-decoration: none;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio p {
+  color: var(--gray);
+  margin-top: 2rem;
+  /* line-height: 1.5rem; */
+}
+
+/* BIO */
+
+.social-medias {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
 }

@@ -1,4 +1,4 @@
-// script that detects the mouse position and sets the variables in the CSS like (--mouseX and --mouseY)
+// script that detects the mouse position and sets the variables in the CSS like (--mouseX and --mouseY); src= https://codepen.io/bramus/pen/eBZgPB
 
 const root = document.documentElement;
 
